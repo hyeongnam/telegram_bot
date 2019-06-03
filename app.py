@@ -30,7 +30,7 @@ app = Flask(__name__)
 token = config('TOKEN')
 api_url = f'https://api.telegram.org/bot{token}'
 
-@app.route(f'/{:q}',methods=['POST'])
+@app.route(f'/{token}',methods=['POST'])
 def telegram():
     # 파일 상단에서 import pprint
     message = request.get_json().get('message')
